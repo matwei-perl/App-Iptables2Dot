@@ -1,0 +1,10 @@
+^App-Iptables2Dot-v.+
+^blib$
+^_build$
+^Build$
+^iptables-save\.txt$
+^Makefile$
+^Makefile\.PL$
+^META\.yml$
+^META\.json$
+\.pdf$

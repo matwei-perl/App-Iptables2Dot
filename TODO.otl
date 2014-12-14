@@ -1,0 +1,23 @@
+[_] later
+	[_] dot: Warning: node LOG, port name unrecognized
+		: also DNAT, SNAT
+	[_] test parsing of iptables options
+	[_] test diagnostics
+	[_] Iptables2Dot.pm: POD: no L<mamawe@cpan.org>
+	[_] Build.PL: create_makefile_pl => 'traditional'
+		: temporary till most distributions have at least perl 5.10.1
+[_] some time
+	[_] recreate iptables-save test files
+		: ferm -n -l ferm/test.ferm > t/iptables-save/test.txt
+done
+	[X] v0.1.0
+		[X] use a module
+		[X] don't show multiple connections to target with --noshowrules
+			: e.g. LOG, SNAT, DNAT, ...
+			: show one edge with count as label
+		[X] method read_iptables_file($fname)
+		[X] omit standard targets
+			: e.g. LOG, SNAT, DNAT, ...
+			: with showrules
+		[X] omit unused chains
+			: chains that are neither source nor target

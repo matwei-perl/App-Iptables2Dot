@@ -1,0 +1,37 @@
+# vim: set sw=4 ts=4 tw=78 et si:
+table filter {
+	chain FORWARD {
+		interface eth2 {
+			jump filter_from_eth2;
+		}
+		proto tcp {
+			interface eth0 {
+				dport 25	ACCEPT;
+			}
+			LOG;
+		}
+		proto udp {
+			dport 123		ACCEPT;
+			LOG;
+		}
+		LOG;
+	}
+    chain INPUT {
+        policy DROP;
+    }
+    chain OUTPUT {
+        policy ACCEPT;
+    }
+	chain filter_from_eth2 {
+		LOG;
+	}
+}
+table nat {
+	chain POSTROUTING {
+        interface eth0 MASQUERADE;
+        interface eth1 daddr 192.168.1.0/24 SNAT to 192.168.2.0/24;
+	}
+    chain PREROUTING {
+        interface eth1 daddr 192.168.2.0/24 DNAT to 192.168.1.0/24;
+    }
+}

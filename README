@@ -1,0 +1,59 @@
+NAME
+    graph-iptables - turn iptables-save output into graphs for GraphViz
+
+SYNOPSIS
+     iptables2dot [options] [iptables-save-output-file]
+
+OPTIONS
+    -help   Print a brief help message and exit.
+
+    -manual Print the manual page and exit.
+
+    -edgelabel
+            Provide labels at the edge showing the input or output device
+            for a jump rule.
+
+    -noshowrules
+            Don't show the rules for the chains. Instead show only the
+            possible jumps from chain to chain.
+
+    -tables tablelist
+            Only print the tables given in *tablelist*. The tables in
+            *tablelist* are separated by comma.
+
+            Possible tables are "nat", "raw", "mangle" and "filter".
+            Defaults to table "filter".
+
+DESCRIPTION
+    This program takes the output from the command "iptables-save" on Linux
+    and turns into input suitable for the "dot" program from GraphViz.
+
+    It takes the output form "iptables-save" either from standard input
+    (STDIN) or from a text file whose name was given on the command line.
+
+    It writes the graph description for the "dot" program to standard output
+    (STDOUT).
+
+    There are two use cases for this program. The first is to get an
+    overview of a given iptables configuration and understand the possible
+    jumps between different chains in the tables. The second is to make a
+    detailed analysis of an iptables configuration using the detailed
+    graphical representation.
+
+    The typical workflow for the first use case would be:
+
+     $ sudo iptables-save \
+       | iptables2dot -noshowrules -table filter \
+       > iptables-filter-overview.dot
+     $ dot -Tpdf iptables-filter-overview.dot -o iptables-filter-overview.pdf
+
+    For the second use case you would do this:
+
+     $ sudo iptables-save \
+       | iptables2dot -edgelabel -table filter \
+       > iptables-filter.dot
+     $ dot -Tpdf iptables-filter.dot -o iptables-filter.pdf
+
+AUTHOR
+    Mathias Weidner
+

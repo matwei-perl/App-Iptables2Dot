@@ -4,7 +4,7 @@
       "Mathias Weidner <mamawe@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.110440",
+   "generated_by" : "Module::Build version 0.4007, CPAN::Meta::Converter version 2.132140",
    "license" : [
       "perl_5"
    ],
@@ -16,9 +16,9 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "File::Spec" : 0,
-            "Probe::Perl" : 0,
-            "Test::More" : 0
+            "File::Spec" : "0",
+            "Probe::Perl" : "0",
+            "Test::More" : "0"
          }
       },
       "configure" : {
@@ -28,16 +28,16 @@
       },
       "runtime" : {
          "requires" : {
-            "Carp" : 0,
+            "Carp" : "0",
             "perl" : "v5.10.1",
-            "version" : 0
+            "version" : "0"
          }
       }
    },
    "provides" : {
       "App::Iptables2Dot" : {
          "file" : "lib/App/Iptables2Dot.pm",
-         "version" : "v0.2.0"
+         "version" : "v0.2.2"
       }
    },
    "release_status" : "stable",
@@ -46,5 +46,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "v0.2.0"
+   "version" : "v0.2.2"
 }

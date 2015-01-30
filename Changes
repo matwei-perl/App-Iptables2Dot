@@ -1,5 +1,12 @@
 Revision history for App-Iptables2Dot
 
+0.2.2 Fr 30. Jan 20:27:22 CET 2015
+	- added some more options to @App::Iptables2Dot::optdefs
+	- changed POD of bin/iptables2dot to (hopefully) make clearer
+	  that the program is best suited to get an overview over a set
+	  of iptables rules and only sometimes can be used directly for
+	  a detailed analysis
+
 0.2.1 Mi 28. Nov 21:39:19 CET 2012
 	- sort internal nodes to get predictable test results
 

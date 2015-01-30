@@ -3,7 +3,7 @@ use 5.010;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('0.0.1');
+use version; our $VERSION = qv('0.2.2');
 
 use App::Iptables2Dot;
 use Getopt::Long;
@@ -56,7 +56,7 @@ __END__
 
 =head1 NAME
 
-graph-iptables - turn iptables-save output into graphs for GraphViz
+iptables2dot - turn iptables-save output into graphs for GraphViz
 
 =head1 SYNOPSIS
 
@@ -127,19 +127,31 @@ It takes the output form C<< iptables-save >> either from standard input
 It writes the graph description for the C<< dot >> program to standard output
 (STDOUT).
 
-There are two use cases for this program. The first is to get an overview of a
+The main purpose of this program is to get an overview of a
 given iptables configuration and understand the possible jumps between
-different chains in the tables. The second is to make a detailed analysis of
-an iptables configuration using the detailed graphical representation.
+different chains in the tables.
+I usually make a printout of the graph for the different tables and have it
+at hand when studying the rules.
 
-The typical workflow for the first use case would be:
+The typical workflow is:
 
  $ sudo iptables-save \
    | iptables2dot -noshowrules -table filter \
    > iptables-filter-overview.dot
  $ dot -Tpdf iptables-filter-overview.dot -o iptables-filter-overview.pdf
 
-For the second use case you would do this:
+Although it is possible to make a detailed graph of an iptables
+configuration containing all rules, I wouldn't recommend this in most cases.
+
+In those configurations, where you would need the graph to comprehend the
+rules, the resulting graph would be a mess.
+
+When the graph looks neat and is legible on A4 paper, you would probably
+understand the configuration without it. 
+But it could be handy to explain the rules to someone else, following
+them with a pencil or your finger.
+
+You would do this to get a detailed graph:
 
  $ sudo iptables-save \
    | iptables2dot -edgelabel -table filter \
@@ -165,7 +177,7 @@ Alternatively you may want to use the program like this
 
  iptables2dot --add-optdef unknown-opt=s ...
 
-if the programm dies with message
+if the program dies with message
 I<unknown argument in rule: --unknown-opt arg ...> and you don't want to touch
 the library file I<Apt/Iptables2Dot.pm>.
 

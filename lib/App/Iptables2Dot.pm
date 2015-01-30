@@ -7,21 +7,16 @@ use strict;
 use Carp;
 use Getopt::Long qw(GetOptionsFromString);
 
-use version; our $VERSION = qv('0.2.1');
-
-# Other recommended modules (uncomment to use):
-#  use IO::Prompt;
-#  use Perl6::Export;
-#  use Perl6::Slurp;
-#  use Perl6::Say;
-
+use version; our $VERSION = qv('0.2.2');
 
 # Module implementation here
 
 my @optdefs = qw(
+    checksum-fill
     clamp-mss-to-pmtu
     destination|d=s
     dport=s
+    destination-ports|dports=s
     in-interface|i=s
     icmp-type=i
     jump|j=s
@@ -29,7 +24,14 @@ my @optdefs = qw(
     limit-burst=s
     log-prefix=s
     m=s
+    mac-source=s
+    match-set=s
     o=s
+    physdev-in=s
+    physdev-is-bridged
+    physdev-is-in
+    physdev-is-out
+    physdev-out=s
     protocol|p=s
     reject-with
     source|s=s
@@ -37,6 +39,7 @@ my @optdefs = qw(
     state=s
     tcp-flags=s
     to-destination=s
+    to-ports=s
     to-source
     ulog-prefix=s
 );

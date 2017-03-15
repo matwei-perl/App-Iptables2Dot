@@ -11,5 +11,6 @@
 ^MYMETA.yml$
 .pdf$
 .swp$
+^tmp$
 ^TODO.otl$
 ^MYMETA\.json$

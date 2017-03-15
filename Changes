@@ -1,5 +1,12 @@
 Revision history for App-Iptables2Dot
 
+v0.2.3 2017-03-15
+	- fixed bug #120616
+	- added regression test
+	- added some more options to @App::Iptables2Dot::optdefs:
+	  comment=s, ctstate=s, gid-owner=s, notrack
+	- t/script-iptables2dot.t: Skip if missing Probe::Perl
+
 0.2.2 Fr 30. Jan 20:27:22 CET 2015
 	- added some more options to @App::Iptables2Dot::optdefs
 	- changed POD of bin/iptables2dot to (hopefully) make clearer

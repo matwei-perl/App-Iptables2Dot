@@ -1,7 +1,11 @@
-use strict;
-use File::Spec;
-use Probe::Perl;
 use Test::More;
+
+eval "use Probe::Perl";
+plan skip_all => "Probe::Perl required for testing script" if $@;
+
+use File::Spec;
+
+use strict;
 
 my $perl = Probe::Perl->find_perl_interpreter;
 my $lib  = '-I' . File::Spec->catfile(qw/blib lib/);

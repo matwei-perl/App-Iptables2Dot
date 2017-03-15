@@ -7,16 +7,19 @@ use strict;
 use Carp;
 use Getopt::Long qw(GetOptionsFromString);
 
-use version; our $VERSION = qv('0.2.2');
+use version; our $VERSION = qv('v0.2.3');
 
 # Module implementation here
 
 my @optdefs = qw(
     checksum-fill
     clamp-mss-to-pmtu
+    comment=s
+    ctstate=s
     destination|d=s
     dport=s
     destination-ports|dports=s
+    gid-owner=s
     in-interface|i=s
     icmp-type=i
     jump|j=s
@@ -26,6 +29,7 @@ my @optdefs = qw(
     m=s
     mac-source=s
     match-set=s
+    notrack
     o=s
     physdev-in=s
     physdev-is-bridged

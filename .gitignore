@@ -4,5 +4,7 @@ Build
 META.json
 META.yml
 Makefile.PL
+Makefile
+MANIFEST.bak
 _build
 blib

@@ -7,7 +7,7 @@ use strict;
 use Carp;
 use Getopt::Long qw(GetOptionsFromString);
 
-use version; our $VERSION = qv('v0.2.3');
+use version; our $VERSION = qv('v0.2.4');
 
 # Module implementation here
 
@@ -21,7 +21,7 @@ my @optdefs = qw(
     destination-ports|dports=s
     gid-owner=s
     in-interface|i=s
-    icmp-type=i
+    icmp-type=s
     jump|j=s
     limit=s
     limit-burst=s

@@ -4,6 +4,7 @@
 ^_build/*
 ^Build$
 ^ferm/*
+^.git/*
 ^iptables-save.txt$
 ^Makefile$
 ^_MTN/*

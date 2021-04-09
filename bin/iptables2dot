@@ -3,7 +3,7 @@ use 5.010;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v0.2.4');
+use version; our $VERSION = qv('v0.2.5');
 
 use App::Iptables2Dot;
 use Getopt::Long;

@@ -1,0 +1,11 @@
+# vim: set sw=4 ts=4 tw=78 et si:
+table filter {
+	chain FORWARD {
+		interface eth2 {
+			jump filter-from-eth2;
+		}
+	}
+	chain filter-from-eth2 {
+		LOG;
+	}
+}

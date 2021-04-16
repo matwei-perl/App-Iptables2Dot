@@ -5,6 +5,9 @@ table filter {
 			jump filter-from-eth2;
 		}
 	}
+    chain DOCKER-USER {
+        RETURN;
+    }
 	chain filter-from-eth2 {
 		LOG;
 	}

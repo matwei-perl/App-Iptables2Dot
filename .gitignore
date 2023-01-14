@@ -10,3 +10,4 @@ META.yml
 MYMETA.json
 MYMETA.yml
 tmp
+.venv

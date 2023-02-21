@@ -1,5 +1,7 @@
 Revision history for App-Iptables2Dot
 
+	- added an additional note about hyphens in the POD of iptables2dot.
+
 v0.3.3 Sat Jan 14 15:15:26 CET 2023
 	- added options for iptables-extension owner
 	- fixed GitHub issue #4

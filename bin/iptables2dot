@@ -201,6 +201,20 @@ the library file I<Apt/Iptables2Dot.pm>.
 
 =back
 
+=head2 Graphviz (DOT) errors
+
+=over
+
+=item C<< syntax error in line <lineno> near '-' >>
+
+Graphviz does not allow a hyphen (minus character: C<->)
+as ID for nodes in the DOT language.
+If you have hyphens in the name of iptables chains,
+please use option C<< --use-numbered-nodes >> when calling iptables2dot.
+
+=back
+
 =head1 AUTHOR
 
 Mathias Weidner <mamawe@cpan.org>
+
